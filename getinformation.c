@@ -26,7 +26,7 @@ if (!info->argv)
 info->argv = malloc(sizeof(char *) * 2);
 if (info->argv)
 {
-info->argv[0] = _strdup(info->arg);
+info->argv[0] =strdup(info->arg);
 info->argv[1] = NULL;
 }
 }

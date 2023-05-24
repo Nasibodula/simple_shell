@@ -24,7 +24,7 @@ if (result > INT_MAX)
 return (-1);
 }
 else
-eturn (-1);
+return (-1);
 }
 return (result);
 }
