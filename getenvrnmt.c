@@ -7,9 +7,9 @@
 */
 char **get_environ(info_t *info)
 {
-if (!info->environ || info->env_changed)
+if (!(info -> environ) || (info -> env_changed))
 {
-info->environ = list_to_strings(info->env);
+info->environ = list_to_strings(info -> env);
 info->env_changed = 0;
 }
 return (info->environ);
@@ -32,7 +32,7 @@ while (node)
 p = starts_with(node->str, var);
 if (p && *p == '=')
 {
-info->env_changed = delete_node_at_index(&(info->env), i);
+info -> env_changed = delete_node_at_index(&(info -> env), i);
 i = 0;
 node = info->env;
 continue;
@@ -40,11 +40,11 @@ continue;
 node = node->next;
 i++;
 }
-return (info->env_changed);
+return (info -> env_changed);
 }
 /**
 * _setenv - Initialize new environment variable,
-*or modify the existing one
+* or modify the existing one
 * @value: the string environment variable value
 */
 int _setenv(info_t *info, char *var, char *value)
